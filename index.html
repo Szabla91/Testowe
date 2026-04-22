@@ -16,15 +16,26 @@
   </header>
 
   <main>
-    <section class="section section--visible section--compact">
-      <div class="form-header">
-        <label for="carrierSelect">Dla jakiego armatora chcesz wyliczyć koszty?</label>
-        <select id="carrierSelect">
-          <option value="">Wybierz armatora</option>
-        </select>
-        <div id="info" class="info-box">Ładowanie danych stawek…</div>
-      </div>
-    </section>
+<section class="section section--visible section--compact top-panel">
+  <div class="top-panel__header">
+    <span class="top-panel__eyebrow">Ustawienia kalkulatora</span>
+    <h2 class="top-panel__title">Wybierz armatora i sposób rozliczenia</h2>
+    <p class="top-panel__desc">
+      Po wyborze armatora kalkulator pokaże odpowiednie sekcje i model naliczania opłat.
+    </p>
+  </div>
+
+  <div class="top-panel__body">
+    <label for="carrierSelect" class="top-panel__label">Armator</label>
+    <select id="carrierSelect">
+      <option value="">Wybierz armatora</option>
+    </select>
+
+    <div id="info" class="info-box info-box--status">
+      Ładowanie danych stawek…
+    </div>
+  </div>
+</section>
 <div class="sections-layout">
     <section id="section_demdet" class="section">
       <h2>DEMURRAGE + DETENTION</h2>
