@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kalkulator Demurrage / Detention / Storage</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="page-header">
+    <a href="https://bbats.sharepoint.com/:u:/r/sites/MLK/SitePages/SEA.aspx?csf=1&web=1&e=Jd9NJJ" class="btn-back">Powrót do ekranu głównego</a>
+    <h1>Kalkulator kosztów Demurrage / Detention oraz Storage w polskich portach</h1>
+  </header>
+
+  <main>
+    <section class="section section--visible section--compact">
+      <div class="form-header">
+        <label for="carrierSelect">Dla jakiego armatora chcesz wyliczyć koszty?</label>
+        <select id="carrierSelect">
+          <option value="">Wybierz armatora</option>
+        </select>
+        <div id="info" class="info-box">Ładowanie danych stawek…</div>
+      </div>
+    </section>
+
+    <section id="section_demdet" class="section">
+      <h2>DEMURRAGE + DETENTION (łączone)</h2>
+      <div class="form-grid">
+        <label>Data wprowadzenia kontenera do portu
+          <input type="date" id="demdet_start">
+        </label>
+        <label>Data zdania pustego kontenera
+          <input type="date" id="demdet_end">
+        </label>
+        <label>Port
+          <select id="demdet_port">
+            <option value="Gdansk">Gdańsk</option>
+            <option value="Gdynia">Gdynia</option>
+          </select>
+        </label>
+        <label>Typ kontenera
+          <select id="demdet_type">
+            <option value="20DRY">20 DRY</option>
+            <option value="40DRY">40 DRY</option>
+          </select>
+        </label>
+      </div>
+      <button type="button" data-calc="demdet">Oblicz Demurrage + Detention</button>
+      <div id="result_demdet" class="result"></div>
+    </section>
+
+    <section id="section_demurrage" class="section">
+      <h2>DEMURRAGE</h2>
+      <div class="form-grid">
+        <label>Data wprowadzenia kontenera do portu
+          <input type="date" id="demurrage_start">
+        </label>
+        <label>Data odbioru kontenera z terminala
+          <input type="date" id="demurrage_end">
+        </label>
+        <label>Port
+          <select id="demurrage_port">
+            <option value="Gdansk">Gdańsk</option>
+            <option value="Gdynia">Gdynia</option>
+          </select>
+        </label>
+        <label>Typ kontenera
+          <select id="demurrage_type">
+            <option value="20DRY">20 DRY</option>
+            <option value="40DRY">40 DRY</option>
+          </select>
+        </label>
+      </div>
+      <button type="button" data-calc="demurrage">Oblicz Demurrage</button>
+      <div id="result_demurrage" class="result"></div>
+    </section>
+
+    <section id="section_detention" class="section">
+      <h2>DETENTION</h2>
+      <div class="form-grid">
+        <label>Data odbioru kontenera z terminala
+          <input type="date" id="detention_start">
+        </label>
+        <label>Data zdania pustego kontenera
+          <input type="date" id="detention_end">
+        </label>
+        <label>Port
+          <select id="detention_port">
+            <option value="Gdansk">Gdańsk</option>
+            <option value="Gdynia">Gdynia</option>
+          </select>
+        </label>
+        <label>Typ kontenera
+          <select id="detention_type">
+            <option value="20DRY">20 DRY</option>
+            <option value="40DRY">40 DRY</option>
+          </select>
+        </label>
+      </div>
+      <button type="button" data-calc="detention">Oblicz Detention</button>
+      <div id="result_detention" class="result"></div>
+    </section>
+
+    <section id="section_storage" class="section">
+      <h2>STORAGE</h2>
+      <div class="form-grid">
+        <label>Data wprowadzenia kontenera do portu
+          <input type="date" id="storage_start">
+        </label>
+        <label>Data odbioru kontenera z terminala
+          <input type="date" id="storage_end">
+        </label>
+        <label>Port
+          <select id="storage_port">
+            <option value="Gdansk">Gdańsk</option>
+            <option value="Gdynia">Gdynia</option>
+          </select>
+        </label>
+        <label>Typ kontenera
+          <select id="storage_type">
+            <option value="20DRY">20 DRY</option>
+            <option value="40DRY">40 DRY</option>
+          </select>
+        </label>
+      </div>
+      <button type="button" data-calc="storage">Oblicz Storage</button>
+      <div id="result_storage" class="result"></div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
