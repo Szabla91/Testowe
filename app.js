@@ -57,7 +57,7 @@ async function init() {
     infoBox.textContent = 'Wybierz armatora z listy powyżej.';
   } catch (error) {
     console.error(error);
-    infoBox.innerHTML = '<span class="error">Nie udało się wczytać pliku rates.csv. Sprawdź, czy plik znajduje się obok index.html i czy strona działa przez GitHub Pages lub lokalny serwer.</span>';
+    infoBox.innerHTML = '<span class="error">Nie udało się wczytać pliku rates.csv. Sprawdź, czy plik znajduje się w folderze</span>';
   }
 }
 
@@ -187,15 +187,15 @@ function buildInfoText(chargeTypes) {
   const hasDetention = chargeTypes.includes('detention');
 
   if (hasDemDet && hasStorage) {
-    return 'Ten armator stosuje łączone wyliczenia demurrage + detention oraz osobne storage.';
+    return 'Sposób rozliczenia: łączone demurrage + detention oraz osobne storage.';
   }
 
   if (hasDemDet) {
-    return 'Ten armator stosuje łączone wyliczenia demurrage + detention.';
+    return 'Sposób rozliczenia: łączone demurrage + detention.';
   }
 
   if (hasDemurrage && hasDetention) {
-    return 'Ten armator stosuje osobne wyliczenia demurrage oraz detention.';
+    return 'Sposób rozliczenia: osobno demurrage oraz detention.';
   }
 
   return 'Dla wybranego armatora są dostępne tylko wybrane typy opłat.';
