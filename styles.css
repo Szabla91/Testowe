@@ -114,6 +114,20 @@ label {
   display: none;
   transition: transform 0.18s ease, box-shadow 0.18s ease;
 }
+.sections-layout {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+  gap: 28px;
+  max-width: 1280px;
+  margin: 0 auto;
+  align-items: start;
+}
+
+.sections-layout .section {
+  max-width: none;
+  width: 100%;
+  margin: 0;
+}
 
 .section:hover {
   transform: translateY(-1px);
@@ -317,7 +331,10 @@ button:active {
   body {
     padding: 70px 14px 36px;
   }
-
+  .sections-layout {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
   .btn-back {
     position: static;
     display: inline-block;
