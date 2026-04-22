@@ -22,8 +22,7 @@ body {
   background: #f3f4f6;
   color: var(--text);
   padding: 40px 20px 60px;
-  max-width: 1200px;
-  margin: 0 auto;
+  margin: 0;
 }
 
 /* ===== HEADER ===== */
